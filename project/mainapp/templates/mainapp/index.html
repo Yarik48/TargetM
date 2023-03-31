@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <div class="list-group">
+
+
+
+
+
+
+
+         {% for chat in chats %}
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><img src="{{ chat.ava.url }}" width="60px" style="border-radius:90%"> {{ chat.name }}</h5>
+
+      <small class="text-muted">(data send last mesneng)</small>
+    </div>
+
+    <p class="mb-1">(last meseng)</p>
+    <small class="text-muted">Donec id elit non mi porta.</small>
+  </a>
+        {% endfor %}
+</div>
+    <h1>Список чатов</h1>
+    <ul>
+    {% for chat in chats %}
+        <li><a href="{% url 'chat' chat.id %}">{{ chat.name }}</a></li>
+    {% endfor %}
+    </ul>
+    <h1>Список групп</h1>
+    <ul>
+    {% for group in groups %}
+        <li><a href="{% url 'group' group.id %}">{{ group.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

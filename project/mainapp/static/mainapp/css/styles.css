@@ -1,0 +1,38 @@
+.header{
+    margin:0 auto;
+    background-color:white;
+    box-shadow:1px 1px 1px black;
+    padding:8px 0 1px 0
+}
+
+.menu{
+    width:600px;
+    margin:0 auto;
+}
+.menu__li{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:20px;
+
+}
+
+.menu__li a{
+    display:inline-block;
+    vertical-align:middle;
+    text-decoration:none;
+    font-size:17px;
+
+}
+.logo{
+    font-size:27px;
+    font-weight:bold;
+}
+
+.alert{
+    width:600px;
+    margin:20px auto
+}
+
+.targets{
+    float:right
+}

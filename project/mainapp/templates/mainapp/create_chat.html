@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>Создать новый чат</h1>
+    <form method="post" action="{% url 'create_chat' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="name">Название чата:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <input type="file" name="ava" id="ava" required>
+        <div>
+            <label for="members">Участники:</label>
+            <select name="members" id="members" multiple>
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}

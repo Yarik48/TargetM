@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    <h1>{{ group.name }}</h1>
+    <p>Участники:</p>
+    <ul>
+    {% for member in group.members.all %}
+        <li>{{ member.username }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Список чатов</h2>
+    <ul>
+    {% for chat in chats %}
+        <li><a href="{% url 'chat' chat.id %}">{{ chat.name }}</a></li>
+    {% endfor %}
+    </ul>
+    <p><a href="{% url 'create_chat' %}?group_id={{ group.id }}">Создать новый чат</a></p>
+{% endblock %}
